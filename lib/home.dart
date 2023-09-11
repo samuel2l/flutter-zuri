@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,21 +10,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-return Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Samuel's Slack"),
+        title: const Text("Samuel's Slack"),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
           Image(
-            image: NetworkImage(
+            image: const NetworkImage(
                 'https://i.pinimg.com/1200x/69/a5/60/69a5602fb6377d1fef9bb45e8db9e415.jpg'),
             height: MediaQuery.of(context).size.height * 0.4,
             fit: BoxFit.cover,
           ),
-          SizedBox(height: 16.0),
-          Text(
+          const SizedBox(height: 16.0),
+          const Text(
             'Name: Samuel Adams\n'
             'Email: sama2951@gmail.com\n'
             'Slack Name: Sam Adams\n'
@@ -35,13 +34,13 @@ return Scaffold(
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pushNamed('/WebView');
             },
             style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(12.0),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
@@ -50,25 +49,6 @@ return Scaffold(
           ),
         ],
       ),
-    );  }
-}
-
-class WebViewContainer extends StatefulWidget {
-  const WebViewContainer({super.key});
-
-  @override
-  State<WebViewContainer> createState() => _WebViewContainerState();
-}
-
-class _WebViewContainerState extends State<WebViewContainer> {
-  final controller = WebViewController()
-    ..setJavaScriptMode(JavaScriptMode.unrestricted)
-    ..clearCache()
-    ..loadRequest(Uri.parse('https://github.com/samuel2l/Zuri-flutter.git'));
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: WebViewWidget(controller: controller),
     );
   }
 }
