@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:zurifirstprj/edit.dart';
 import 'package:zurifirstprj/home.dart';
-import 'package:zurifirstprj/webview.dart';
 
+import 'package:zurifirstprj/webview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,19 +18,22 @@ class MyApp extends StatelessWidget {
       //material app allows us to route
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
- 
-      theme: ThemeData(
 
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: ThemeData(
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 1, 3, 59)),
         useMaterial3: true,
- 
       ),
       routes: {
-        '/WebView':(context) => const WebViewContainer()
+        '/WebView': (context) => const WebViewContainer(),
       },
-      home: const HomePage(),
+      home: HomePage(
+        name: 'Samuel Adams',
+        slackName: 'Sam Adams',
+        bio:
+            ' I am a student University of Ghana and a member of the mobile track. I aim to become an amazing flutter developer in flutter.',
+        mail: 'sama29571@gmail.com',
+      ),
     );
   }
 }
-
