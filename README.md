@@ -1,7 +1,5 @@
 # zurifirstprj
-
-A new Flutter project.
-
+Task was to create screens to be able to edit data on another screen and design achieves this. Functionality to be able to retain previous user data  when data for a specific field is not entered exists in this assignment as well.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
